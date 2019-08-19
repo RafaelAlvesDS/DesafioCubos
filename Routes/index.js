@@ -29,7 +29,7 @@ router.post('/', function (req, res){
         }        
     }
         
-    if(!(req.body.type == "normal" && moment(req.body.date, "DD-MM-YYYY", true).isValid())){
+    if(req.body.type == "normal" && !(moment(req.body.date, "DD-MM-YYYY", true).isValid())){
         return res.send({message:"Data inválida"});
     }
 
